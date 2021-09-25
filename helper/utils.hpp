@@ -6,4 +6,5 @@ namespace Utils {
 	void AttachConsole();
 	void DetachConsole();
 	bool ConsolePrint(const char* msg, ...);
+	char ConsoleReadKey();
 }
