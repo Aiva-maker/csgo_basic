@@ -1,5 +1,21 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
-#include "pch.h"
+//#include "valve_sdk/sdk.hpp"
+#include "helper/utils.hpp"
+
+
+
+DWORD APIENTRY OnDllAttach(LPVOID base)
+{
+    Utils::AttachConsole();
+    Utils::ConsolePrint("Attached");
+    return true;
+}
+
+BOOL APIENTRY OnDllDetach()
+{
+    Utils::DetachConsole();
+    return true;
+}
 
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
@@ -9,11 +25,17 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
+        DisableThreadLibraryCalls(hModule);
+        CreateThread(nullptr, 0, OnDllAttach, hModule, 0, nullptr);
     case DLL_THREAD_ATTACH:
     case DLL_THREAD_DETACH:
     case DLL_PROCESS_DETACH:
-        break;
+        if (lpReserved == nullptr)
+            return OnDllDetach();
+        return TRUE;
+
+    default:
+        return TRUE;
     }
-    return TRUE;
 }
 
