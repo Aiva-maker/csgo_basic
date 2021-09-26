@@ -1,9 +1,11 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 
 #include <Windows.h>
-#include "helper/utils.hpp"
 #include "valve_sdk/sdk.hpp"
+#include "helper/utils.hpp"
+#include "helper/input.hpp"
 
+#include "menu.hpp"
 
 DWORD APIENTRY OnDllAttach(LPVOID base)
 {
@@ -19,6 +21,10 @@ DWORD APIENTRY OnDllAttach(LPVOID base)
         Utils::ConsolePrint("Initializing...\n");
         Interfaces::Initialize();
         Interfaces::Dump();
+
+        //NetVarSys::Get().Initialize();
+        InputSys::Get().Initialize();
+        //Render::Get().Initialize();
 
         FreeLibraryAndExitThread(static_cast<HMODULE>(base), 1);
     }
