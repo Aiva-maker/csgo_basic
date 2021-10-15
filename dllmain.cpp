@@ -1,14 +1,40 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
-//#include "valve_sdk/sdk.hpp"
+
+#include <Windows.h>
+#include "valve_sdk/sdk.hpp"
 #include "helper/utils.hpp"
+#include "helper/input.hpp"
 
-
+#include "menu.hpp"
 
 DWORD APIENTRY OnDllAttach(LPVOID base)
 {
+    while (!GetModuleHandleA("serverbrowser.dll")) //sleep until all modules have been loaded
+        Sleep(1000);                               //serverbrowser.dll being the last module
+
+#ifdef _DEBUG
     Utils::AttachConsole();
-    Utils::ConsolePrint("Attached");
     return true;
+#endif
+
+    try {
+        Utils::ConsolePrint("Initializing...\n");
+        Interfaces::Initialize();
+        Interfaces::Dump();
+
+        //NetVarSys::Get().Initialize();
+        InputSys::Get().Initialize();
+        //Render::Get().Initialize();
+
+        FreeLibraryAndExitThread(static_cast<HMODULE>(base), 1);
+    }
+    catch (const std::exception& ex) {
+        Utils::ConsolePrint("An error occured during initialization:\n");
+        Utils::ConsolePrint("%s\n", ex.what());
+        Utils::ConsoleReadKey();
+        Utils::DetachConsole();
+        FreeLibraryAndExitThread(static_cast<HMODULE>(base), 1);
+    }
 }
 
 BOOL APIENTRY OnDllDetach()

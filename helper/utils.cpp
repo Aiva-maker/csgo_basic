@@ -25,6 +25,8 @@ namespace Utils {
         SetConsoleMode(h_in,
             ENABLE_INSERT_MODE | ENABLE_EXTENDED_FLAGS |
             ENABLE_PROCESSED_INPUT | ENABLE_QUICK_EDIT_MODE);
+
+        ConsolePrint("Attached");
     }
 
     void DetachConsole() 
@@ -54,5 +56,17 @@ namespace Utils {
         va_end(va);
 
         return WriteConsoleA(h_out, buf, static_cast<DWORD>(strlen(buf)), nullptr, nullptr);
+    }
+
+    char ConsoleReadKey()
+    {
+        if (!h_in)
+            return false;
+
+        auto key = char{ 0 };
+        auto keysread = DWORD{ 0 };
+        ReadConsoleA(h_in, &key, 1, &keysread, nullptr);
+        
+        return key;
     }
 }
