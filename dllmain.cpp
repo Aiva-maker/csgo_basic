@@ -14,7 +14,7 @@ DWORD APIENTRY OnDllAttach(LPVOID base)
 
 #ifdef _DEBUG
     Utils::AttachConsole();
-    return true;
+    //return true;
 #endif
 
     try {
