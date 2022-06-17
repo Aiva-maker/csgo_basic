@@ -11,7 +11,7 @@ protected:
 	Singleton& operator=(const Singleton&) = delete;
 
 	Singleton(Singleton&&) = delete;
-	Singleton& operator=(singletone&&) = delete;
+	Singleton& operator=(Singleton&&) = delete;
 
 public:
 	static T& Get()

@@ -35,7 +35,7 @@ private:
 
 	bool ProcessMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
 	bool ProcessMouseMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
-	bool ProcessKeyboardMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
+	bool ProcessKeybdMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 	HWND m_hTargetWindow;
 	LONG_PTR m_ulOldWndProc;
@@ -52,6 +52,6 @@ public:
 	bool IsKeyDown(uint32_t vk);
 	bool WasKeyPressed(uint32_t vk);
 
-	void RegisterHotkey(uint32_t vk, std::function<void(void) f);
+	void RegisterHotkey(uint32_t vk, std::function<void(void)> f);
 	void RemoveHotkey(uint32_t vk);
 };

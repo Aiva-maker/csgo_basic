@@ -1,10 +1,12 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
-
+#define NOMINMAX
 #include <Windows.h>
-#include "valve_sdk/sdk.hpp"
-#include "helper/utils.hpp"
-#include "helper/input.hpp"
 
+#include "valve_sdk/sdk.hpp"
+#include "Helpers/utils.hpp"
+#include "Helpers/input.hpp"
+
+#include "hooks.hpp"
 #include "menu.hpp"
 
 DWORD APIENTRY OnDllAttach(LPVOID base)
@@ -23,8 +25,11 @@ DWORD APIENTRY OnDllAttach(LPVOID base)
         Interfaces::Dump();
 
         //NetVarSys::Get().Initialize();
-        InputSys::Get().Initialize();
+        //InputSys::Get().Initialize();
         //Render::Get().Initialize();
+
+        Utils::ConsolePrint("Finished.\n");
+        Utils::ConsolePrint("Built on: %s %s\n", __DATE__, __TIME__);
 
         FreeLibraryAndExitThread(static_cast<HMODULE>(base), 1);
     }
@@ -33,6 +38,7 @@ DWORD APIENTRY OnDllAttach(LPVOID base)
         Utils::ConsolePrint("%s\n", ex.what());
         Utils::ConsoleReadKey();
         Utils::DetachConsole();
+
         FreeLibraryAndExitThread(static_cast<HMODULE>(base), 1);
     }
 }

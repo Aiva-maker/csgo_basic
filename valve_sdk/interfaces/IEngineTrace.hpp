@@ -444,7 +444,7 @@ private:
         startsolid = other.startsolid;
     }
 
-    CGameTrace& operator=(const CGameTrace& other)
+    CGameTrace& CGameTrace::operator=(const CGameTrace& other)
     {
         startpos = other.startpos;
         endpos = other.endpos;

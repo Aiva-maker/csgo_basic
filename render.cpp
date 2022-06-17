@@ -4,11 +4,11 @@
 
 //#include "features/visuals.hpp"
 #include "valve_sdk/csgostructs.hpp"
-#include "helper/input.hpp"
+#include "Helpers/input.hpp"
 #include "menu.hpp"
 //#include "options.hpp"
 //#include "fonts/fonts.hpp"
-//#include "helper/math.hpp"
+//#include "Helpers/math.hpp"
 
 ImFont* g_pDefaultFont;
 ImFont* g_pSecondFont;

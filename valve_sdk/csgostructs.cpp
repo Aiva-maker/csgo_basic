@@ -1,6 +1,6 @@
 #include "csgostructs.hpp"
-#include "../Helpers/Math.hpp"
-#include "../Helpers/Utils.hpp"
+#include "../Helpers/math.hpp"
+#include "../Helpers/utils.hpp"
 
 //increase it if valve added some funcs to baseentity :lillulmoa:
 constexpr auto VALVE_ADDED_FUNCS = 0ull;

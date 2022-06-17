@@ -4,7 +4,7 @@
 #include <chrono>
 
 #include "valve_sdk/csgostructs.hpp"
-#include "helper/input.hpp"
+#include "Helpers/input.hpp"
 //#include "options.hpp"
 //#include "ui.hpp"
 //#include "config.hpp"

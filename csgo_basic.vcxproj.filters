@@ -32,7 +32,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="helper\utils.hpp">
+    <ClInclude Include="Helpers\utils.hpp">
       <Filter>helper</Filter>
     </ClInclude>
     <ClInclude Include="valve_sdk\csgostructs.hpp">
@@ -224,7 +224,7 @@
     <ClInclude Include="singleton.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="helper\input.hpp">
+    <ClInclude Include="Helpers\input.hpp">
       <Filter>helper</Filter>
     </ClInclude>
     <ClInclude Include="menu.hpp">
@@ -257,12 +257,18 @@
     <ClInclude Include="render.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="hooks.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\math.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="helper\utils.cpp">
+    <ClCompile Include="Helpers\utils.cpp">
       <Filter>helper</Filter>
     </ClCompile>
     <ClCompile Include="valve_sdk\csgostructs.cpp">
@@ -304,7 +310,7 @@
     <ClCompile Include="valve_sdk\misc\UtlString.cpp">
       <Filter>SDK\misc</Filter>
     </ClCompile>
-    <ClCompile Include="helper\input.cpp">
+    <ClCompile Include="Helpers\input.cpp">
       <Filter>helper</Filter>
     </ClCompile>
     <ClCompile Include="imgui\imgui.cpp">
@@ -326,6 +332,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="render.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\math.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

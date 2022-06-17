@@ -2,7 +2,7 @@
 
 #include "sdk.hpp"
 #include <array>
-#include "../helper/utils.hpp"
+#include "../helpers/utils.hpp"
 
 #define NETVAR(type, name, table, netvar)                           \
     type& name##() const {                                          \

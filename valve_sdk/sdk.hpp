@@ -54,34 +54,34 @@ namespace Interfaces
     void Dump();
 }
 
-IVEngineClient*       g_EngineClient   = nullptr;
-IBaseClientDLL*       g_CHLClient      = nullptr;
-IClientEntityList*    g_EntityList     = nullptr;
-CGlobalVarsBase*      g_GlobalVars     = nullptr;
-IEngineTrace*         g_EngineTrace    = nullptr;
-ICvar*                g_CVar           = nullptr;
-IPanel*               g_VGuiPanel      = nullptr;
-IClientMode*          g_ClientMode     = nullptr;
-IVDebugOverlay*       g_DebugOverlay   = nullptr;
-ISurface*             g_VGuiSurface    = nullptr;
-CInput*               g_Input          = nullptr;
-IVModelInfoClient*    g_MdlInfo        = nullptr;
-IVModelRender*        g_MdlRender      = nullptr;
-IVRenderView*         g_RenderView     = nullptr;
-IMaterialSystem*      g_MatSystem      = nullptr;
-IGameEventManager2*   g_GameEvents     = nullptr;
-IMoveHelper*          g_MoveHelper     = nullptr;
-IMDLCache*            g_MdlCache       = nullptr;
-IPrediction*          g_Prediction     = nullptr;
-CGameMovement*        g_GameMovement   = nullptr;
-IEngineSound*         g_EngineSound    = nullptr;
-CGlowObjectManager*   g_GlowObjManager = nullptr;
-IViewRender*          g_ViewRender     = nullptr;
-IDirect3DDevice9*     g_D3DDevice9     = nullptr;
-CClientState*         g_ClientState    = nullptr;
-IPhysicsSurfaceProps* g_PhysSurface    = nullptr;
-IInputSystem*         g_InputSystem    = nullptr;
-IWeaponSystem*        g_WeaponSystem   = nullptr;
+inline IVEngineClient*       g_EngineClient   = nullptr;
+inline IBaseClientDLL*       g_CHLClient      = nullptr;
+inline IClientEntityList*    g_EntityList     = nullptr;
+inline CGlobalVarsBase*      g_GlobalVars     = nullptr;
+inline IEngineTrace*         g_EngineTrace    = nullptr;
+inline ICvar*                g_CVar           = nullptr;
+inline IPanel*               g_VGuiPanel      = nullptr;
+inline IClientMode*          g_ClientMode     = nullptr;
+inline IVDebugOverlay*       g_DebugOverlay   = nullptr;
+inline ISurface*             g_VGuiSurface    = nullptr;
+inline CInput*               g_Input          = nullptr;
+inline IVModelInfoClient*    g_MdlInfo        = nullptr;
+inline IVModelRender*        g_MdlRender      = nullptr;
+inline IVRenderView*         g_RenderView     = nullptr;
+inline IMaterialSystem*      g_MatSystem      = nullptr;
+inline IGameEventManager2*   g_GameEvents     = nullptr;
+inline IMoveHelper*          g_MoveHelper     = nullptr;
+inline IMDLCache*            g_MdlCache       = nullptr;
+inline IPrediction*          g_Prediction     = nullptr;
+inline CGameMovement*        g_GameMovement   = nullptr;
+inline IEngineSound*         g_EngineSound    = nullptr;
+inline CGlowObjectManager*   g_GlowObjManager = nullptr;
+inline IViewRender*          g_ViewRender     = nullptr;
+inline IDirect3DDevice9*     g_D3DDevice9     = nullptr;
+inline CClientState*         g_ClientState    = nullptr;
+inline IPhysicsSurfaceProps* g_PhysSurface    = nullptr;
+inline IInputSystem*         g_InputSystem    = nullptr;
+inline IWeaponSystem*        g_WeaponSystem   = nullptr;
 
 template<typename... Args>
 void ConMsg(const char* pMsg, Args... args)
@@ -113,5 +113,5 @@ private:
     C_BasePlayer** m_local;
 };
 
-C_LocalPlayer g_LocalPlayer;
+inline C_LocalPlayer g_LocalPlayer;
 

@@ -1,6 +1,8 @@
 #pragma once
 
+#define NOMINMAX
 #include <Windows.h>
+#include "../valve_sdk/sdk.hpp"
 
 
 namespace Utils {
